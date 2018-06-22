@@ -20,7 +20,7 @@ $this->title = '模版列表';
 			<td><?= $value['name'] ?></td>
 			<td><?= $value['url'] ?></td>
 			<td><?= $value['created_at'] ?></td>
-			<td></td>
+			<td><a href="">下载</a></td>
 		</tr>
 	<?php endforeach; ?>
 </table>
