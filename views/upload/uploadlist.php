@@ -10,7 +10,6 @@ $this->title = '模版列表';
 	<tr>
 		<th>序号</th>
 		<th>名称</th>
-		<th>链接</th>
 		<th>添加时间</th>
 		<th>操作</th>
 	</tr>
@@ -18,9 +17,10 @@ $this->title = '模版列表';
 		<tr>
 			<td><?= $value['id'] ?></td>
 			<td><?= $value['name'] ?></td>
-			<td><?= $value['url'] ?></td>
 			<td><?= $value['created_at'] ?></td>
-			<td><a href="">下载</a></td>
+			<td><a href="<?= $value['url'] ?>" target="_blank">查看</a>
+				<a href="<?= $value['file'] ?>" target="_blank">下载</a>
+			</td>
 		</tr>
 	<?php endforeach; ?>
 </table>

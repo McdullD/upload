@@ -10,9 +10,9 @@ use Yii;
  * @property string $id 自增id
  * @property string $name 名称
  * @property string $url url链接地址
- * @property string $dir 压缩包存在路径
- * @property string $create_at 添加时间
- * @property string $update_at 修改时间
+ * @property string $file 压缩包存在路径
+ * @property string $created_at 添加时间
+ * @property string $updated_at 修改时间
  * @property int $is_deleted 0-未删除,1-已删除
  */
 class Upload extends \yii\db\ActiveRecord
@@ -31,9 +31,9 @@ class Upload extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['create_at', 'update_at'], 'safe'],
+            [['created_at', 'updated_at'], 'safe'],
             [['is_deleted'], 'integer'],
-            [['name', 'url', 'dir'], 'string', 'max' => 255],
+            [['name', 'url', 'file'], 'string', 'max' => 255],
         ];
     }
 
@@ -46,9 +46,9 @@ class Upload extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
             'url' => 'Url',
-            'dir' => 'Dir',
-            'create_at' => 'Create At',
-            'update_at' => 'Update At',
+            'file' => 'File',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
             'is_deleted' => 'Is Deleted',
         ];
     }
