@@ -34,6 +34,7 @@ class UploadBusiness
             ->where(['is_deleted' => 0]);
         $countQuery = clone $query;
         $pages      = new Pagination(['totalCount' => $countQuery->count()]);
+        $pages->defaultPageSize = 10;
         $data       = $query->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
@@ -102,7 +103,6 @@ class UploadBusiness
                             @file_put_contents($file_name, $fstream);
                             // 设置权限
                             chmod($file_name, 0777);
-                            echo "save: " . $file_name . "<br />";
                         }
                         // 关闭入口
                         zip_entry_close($zip_entry);

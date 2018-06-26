@@ -6,6 +6,8 @@ use yii\widgets\LinkPager;
 $this->title = '模版列表';
 ?>
 
+<h2>模版列表</h2>
+<a href="<?=\yii\helpers\Url::to(['add'])?>" class="btn btn-large btn-primary">添加模版</a>
 <table class="table table-bordered">
 	<tr>
 		<th>序号</th>

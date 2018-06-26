@@ -45,7 +45,7 @@ class UploadController extends Controller
         $aParams['file'] = $file['name'];
         $result = $this->business->saveInfo($aParams);
         if($result) {
-        	echo '保存成功';
+        	return $this->redirect('index');
         }
     }
 
